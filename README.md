@@ -44,7 +44,7 @@ All commands are run from the root of the project, from a terminal:
 You go to `localhost:4321/admin/index.html` to see the CMS and use it. If you want to clone this for yourself, you'll need a `.env.development` file that has the following in it:
 
 ```
-TINACLIENTID=<from tina.io>
+TINACLIENTID=<from tinta.io>
 TINATOKEN=<from tina.io>
 TINASEARCH=<from tina.io>
 ```
