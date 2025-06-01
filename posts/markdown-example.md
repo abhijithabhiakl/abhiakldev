@@ -1,5 +1,5 @@
 ---
-title: Markdown Example
+title: Markdown Reference
 slug: markdown
 description: >-
   Check out how markdown is rendered!
@@ -101,4 +101,4 @@ Just some normal text, wow.
 | What          | how            |
 | Why           | when           |
 
-Okay, that's it! Good luck! Write more! Follow your dreams!
+Okay, that's it! 
