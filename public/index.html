@@ -1,33 +1,61 @@
----
-import { getCollection } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import HomePosts from "../components/HomePosts.astro";
-import ColorScript from "../components/ColorScript.astro";
-import Tags from "../components/Tags.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import { Content as About } from "./about.md";
-import getTags from "../scripts/getTags";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHJVDSF8PV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RHJVDSF8PV');
+    </script>
+    <title>Abhijith S</title>
+    <meta name="description" content="Abhijith S, Hardware Developer" />
+    <!-- Icons (fontawesome) and fonts -->
+    <script src="https://kit.fontawesome.com/9dfb73db1d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
-const posts = await getCollection("posts");
-const tags = getTags(posts);
----
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Abhijith S" />
+    <meta name="twitter:description" content="Abhijith S, Hardware Developer from Kerala, India." />
+    <meta name="twitter:creator" content="@abhijithabhiakl" />
+    <meta name="twitter:image" content="./img/og_image.png" />
 
-<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-<!-- <Header title={SITE_TITLE} /> -->
-<main>
-    <!-- Begin integrated content from old index.html -->
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Abhijith S" />
+    <meta property="og:url" content="https://abhiakl.xyz" />
+    <meta property="og:image" content="./img/og_image.png" />
+    <meta property="og:description" content="Abhijith S, Hardware Developer from Kerala, India." />
+    <meta property="og:site_name" content="Abhijith S" />
+    <meta property="og:image:width" content="1300">
+    <meta property="og:image:height" content="730">
+
+    <!-- Favicon/theme -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="manifest" href="./img/manifest.json" />
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#24d05a" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <meta name="msapplication-config" content="/img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
     <div class="container">
         <header class="header-section">
             <div class="header-frame">
                 <h1>Abhijith Sunil</h1>
                 <h2>
-                    <span id="dynamic-text"></span><span class="cursor">|</span> from<br />Kerala, India.
+                    <span id="dynamic-text"></span><span class="cursor">|</span> from<br>Kerala, India.
                 </h2>
             </div>
             <div class="img-frame">
-                <img id="propic" src="/img/face1.jpg" alt="Abhijith Sunil's profile picture" />
+                <img id="propic" src="./img/face1.jpg" alt="Abhijith Sunil's profile picture" />
             </div>
         </header>
         <nav class="links" aria-label="Social links">
@@ -35,17 +63,17 @@ const tags = getTags(posts);
             <a href="https://twitter.com/abhijithabhiakl" target="_blank" rel="noopener noreferrer">twitter</a>
             <a href="mailto:hi@abhiakl.xyz">gmail</a>
             <a href="https://linkedin.com/in/abhijithabhiakl" target="_blank" rel="noopener noreferrer">linkedin</a>
-            <a href="https://www.reddit.com/user/gotouchs0megrass/" target="_blank" rel="noopener noreferrer">reddit</a>
+            <a href="https://www.reddit.com/user/Abhijithabhi367" target="_blank" rel="noopener noreferrer">reddit</a>
             <a href="https://linktr.ee/abhiakl" target="_blank" rel="noopener noreferrer">linktree</a>
             <a href="https://www.instagram.com/abhijithabhiii_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-			<a href="/posts/" target="_blank" rel="noopener noreferrer">blog</a>
+            <a href="https://www.xda-developers.com/#YB584743" target="_blank" rel="noopener noreferrer">XDA-dev</a>
         </nav>
         <main class="bio-switcher">
             <div class="toggler" role="tablist" aria-label="Bio Switcher">
                 <button id="short" class="show" aria-selected="true">Short</button>
                 <button id="long" aria-selected="false">Long</button>
                 <button id="projects" aria-selected="false">Projects</button>
-                <!-- <button id="blog" aria-selected="false">Blog</button> -->
+                <button id="blog" aria-selected="false">Blog</button>
             </div>
             <section class="bio short show" aria-labelledby="short">
                 Hi there! I'm Abhijith! 👋 I'm a <a href="https://www.qriotech.com/" target="_blank" rel="noopener noreferrer">Hardware Developer</a>
@@ -82,7 +110,7 @@ const tags = getTags(posts);
                 <a href="https://github.com/abhijithabhiakl/Redragon_K617-QMK_port" target="_blank" rel="noopener noreferrer">Redragon K617 firmware port (to qmk)</a> <br>
                 <p>There are more projects than I mentioned here which I lost count after the above & too lazy to document all of it. (EO 2024-12-14)</p>
             </section>
-            <!-- <section class="bio blog" aria-labelledby="blog" hidden>
+            <section class="bio blog" aria-labelledby="blog" hidden>
                 <h2 id="blog">Recent Blog Posts</h2>
                 <ul class="blog-list">
                     <li>
@@ -107,29 +135,18 @@ const tags = getTags(posts);
                     </li>
                 </ul>
                 <p>Check back for more posts or reach out if you have any questions!</p>
-            </section> -->
+            </section>
         </main>
         <div class="dark-mode-toggler">
             <input type="checkbox" id="toggler" />
             <label for="toggler" aria-label="Toggler for Dark Mode"></label>
         </div>
     </div>
-    <!-- End integrated content from old index.html -->
-
-    <br />
-
-    <h3>Here's my most recent posts</h3>
-    <HomePosts allPosts={posts} />
-
-    <p class="center">
-        You can also <a href="/rss.xml">
-            subscribe with RSS!
-        </a>
-    </p>
-    <br />
-
-    <Tags tags={tags} all />
-</main>
-<Footer />
-<ColorScript />
-<script src="/script.js" is:inline></script>
+    <script src="./script.js"></script>
+</body>
+<footer id="footer">
+    <a href="https://twitter.com/abhijithabhiakl" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter ico ico1 fa-3x"></i></a>
+    <a href="mailto:hi@abhiakl.xyz"><i class="fas fa-envelope ico ico2 fa-3x"></i></a>
+    <a href="https://github.com/abhijithabhiakl" target="_blank" rel="noopener noreferrer"><i class="fab fa-github ico ico3 fa-3x"></i></a>
+    <p class="copyright">&copy; Copyright 2024 @abhijithabhiakl</p>
+</footer>
