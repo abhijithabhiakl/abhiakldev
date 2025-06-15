@@ -11,7 +11,9 @@ added: 2025-06-09T03:57:40.984Z
 
 # Building a Home Server with an Old Headless Laptop Running Debian - Pt 1
 
-I already had a raspberry-pi homeserver but it stopped working due to moisture damage.  so I'm using my old lap as my new server, it's very essential to me these days...
+I already had a raspberry-pi homeserver but all of a sudden it stopped working due to moisture damage :/  so I'm thinking of using my old lap as my new server, homeserver seems essential to me these days, especially for my Iot projects, so I'm gonna build and setup the server rn & why not I blong it alongside...
+
+
 I'm writing this blog as a guide and as a future reference for me and anyone who want to do the same
 
 I'm writing this in two parts, this part 1 contains how to install and setup debain for a headless server setup.
