@@ -1,7 +1,7 @@
 ---
 title: Setting up a home server
 slug: homeserver
-description: Setting up a home server with my old laptop lying around
+description: Setting up a home server with an old laptop lying around
 tags:
   - technical
   - learning
