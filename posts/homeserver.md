@@ -96,7 +96,7 @@ abhiakl@skittles:~$
 └── /              (ext4, ~115.5 GB)    # Root partition including /boot and /home inside it
 ```
 
-I didn't create a swap partition at this point since I a lot ram and I barely have any use for a dedicated swap, anyway I went for the page file later after installing the system with :
+I didn't create a swap partition at this point since I have a lot ram and I barely have any use for a dedicated swap, anyway I went for the page file later after installing the system with :
 
 ```bash
 ~$ sudo fallocate -l 2G /swapfile
