@@ -1,2 +1,2 @@
-export const SITE_TITLE = "Personal/technical blog of Abhijith Sunil ";
-export const SITE_DESCRIPTION = "Hardware Developer / tinker from Kerala.";
+export const SITE_TITLE = "Abhi's blog";
+export const SITE_DESCRIPTION = "Building things, tinkering with electronics";

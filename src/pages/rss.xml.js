@@ -10,8 +10,8 @@ posts = posts.sort(
 		new Date(a.data.updated || a.data.added).valueOf()
 );
 
-export const GET = () =>
-	rss({
+export const GET = async () => {
+	const response = await rss({
 		title: SITE_TITLE || "",
 		description: SITE_DESCRIPTION || "",
 		site: import.meta.env.SITE,
@@ -22,10 +22,17 @@ export const GET = () =>
 				pubDate: post.data.added,
 				description: post.data.description,
 				content: post.rendered.html,
-				customData: `<updated>${
-					post.data.updated ? post.data.updated : ""
-				}</updated>`,
+				customData: `<updated>${post.data.updated ? post.data.updated : ""
+					}</updated>`,
 			};
 		}),
 		stylesheet: "/rss-styles.xsl",
 	});
+
+	// Set the correct headers for XSL stylesheet to work
+	// See: https://github.com/genmon/aboutfeeds/blob/main/tools/pretty-feed-v3.xsl
+	response.headers.set("Content-Type", "application/xml; charset=utf-8");
+	response.headers.set("X-Content-Type-Options", "nosniff");
+
+	return response;
+};

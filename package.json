@@ -1,6 +1,7 @@
 {
-	"name": "@cassidoo/blahg",
-	"version": "0.0.5",
+	"name": "@abhiakl/blog",
+	"version": "1.0.0",
+	"description": "Personal technical blog of Abhijith Sunil",
 	"private": true,
 	"scripts": {
 		"dev": "npx tinacms dev -c \"astro dev\"",
