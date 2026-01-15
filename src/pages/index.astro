@@ -24,18 +24,18 @@ const tags = getTags(posts);
 
 			<br />
 
+			<Tags tags={tags} all />
+
+			<br />
+
 			<h3>Here's my most recent posts</h3>
 
 			<HomePosts allPosts={posts} />
+			<hr />
 
 			<p class="center">
-				You can also <a href="/rss.xml">
-					subscribe with RSS!
-				</a>
+				You can also <a href="/rss.xml"> subscribe with RSS! </a>
 			</p>
-			<br />
-
-			<Tags tags={tags} all />
 		</main>
 		<Footer />
 		<ColorScript />

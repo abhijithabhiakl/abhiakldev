@@ -3,6 +3,16 @@ const { slug, title, tags, description, date } = Astro.props;
 ---
 
 <li class="post">
+	<div>
+		{
+			tags &&
+				tags.map((tag) => (
+					<a class="tag" href={`/tag/${tag}`}>
+						#{tag}
+					</a>
+				))
+		}
+	</div>
 	<a href={`/post/${slug}/`} class="title">{title}</a>
 	<time datetime={date}>
 		{
@@ -15,14 +25,4 @@ const { slug, title, tags, description, date } = Astro.props;
 	</time>
 	<br />
 	{description && <span class="excerpt">{description}</span>}
-	<div>
-		{
-			tags &&
-				tags.map((tag) => (
-					<a class="tag" href={`/tag/${tag}`}>
-						#{tag}
-					</a>
-				))
-		}
-	</div>
 </li>

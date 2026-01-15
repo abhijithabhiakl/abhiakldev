@@ -14,24 +14,18 @@ let {
 	content: { title, description, added, updated, tags, heroImage },
 } = Astro.props;
 
-added = new Date(added).toLocaleDateString(
-	"en-us",
-	{
+added = new Date(added).toLocaleDateString("en-us", {
+	year: "numeric",
+	month: "short",
+	day: "numeric",
+});
+
+if (updated) {
+	updated = new Date(updated).toLocaleDateString("en-us", {
 		year: "numeric",
 		month: "short",
 		day: "numeric",
-	}
-);
-
-if (updated) {
-	updated = new Date(updated).toLocaleDateString(
-		"en-us",
-		{
-			year: "numeric",
-			month: "short",
-			day: "numeric",
-		}
-	);
+	});
 }
 ---
 
@@ -41,22 +35,32 @@ if (updated) {
 	<body>
 		<Header />
 		<main>
+			<Tags tags={allTags} all />
+			<hr />
 			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="article-title">{title}</h1>
-				{updated ?
-					<span><time>{added}</time>, last updated on <time>{updated}</time></span>
-					:
-					<span>{added && <time>{added}</time>}</span>
+				{
+					heroImage && (
+						<img width={720} height={360} src={heroImage} alt="" />
+					)
 				}
 				<Tags tags={tags} />
+				<h1 class="article-title">{title}</h1>
+				{
+					updated ? (
+						<span>
+							<time>{added}</time>, last updated on{" "}
+							<time>{updated}</time>
+						</span>
+					) : (
+						<span>{added && <time>{added}</time>}</span>
+					)
+				}
 				<hr />
 				<div class="blog-post">
 					<slot />
 				</div>
 			</article>
 		</main>
-		<Tags tags={allTags} all />
 		<Footer />
 		<ColorScript />
 	</body>
