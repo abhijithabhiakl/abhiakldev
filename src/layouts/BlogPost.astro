@@ -32,6 +32,22 @@ if (updated) {
 <html lang="en-us">
 	<BaseHead title={title} description={description} />
 
+	<!-- Highlight.js (Srcery) -->
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/srcery.min.css"
+	/>
+	<script
+		is:inline
+		src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+	></script>
+	<script is:inline>
+		hljs.highlightAll();
+	</script>
+	<!-- Refined Custom Theme -->
+	<link rel="stylesheet" href="/theme/refined-theme.css" />
+
+
 	<body>
 		<Header />
 		<main>
@@ -61,7 +77,15 @@ if (updated) {
 				</div>
 			</article>
 		</main>
+
+		<!-- Dark Mode Toggler -->
+		<div class="dark-mode-toggler">
+			<input type="checkbox" id="toggler" />
+			<label for="toggler" aria-label="Toggler for Dark Mode"></label>
+		</div>
+
 		<Footer />
 		<ColorScript />
+		<script is:inline src="/theme/theme.js"></script>
 	</body>
 </html>

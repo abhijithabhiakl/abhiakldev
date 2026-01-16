@@ -19,3 +19,14 @@ pnpm-debug.log*
 .DS_Store
 
 node_modules
+
+#misc
+themebak/
+
+# astro
+.astro/
+
+# editor config
+.vscode/
+.vscode/
+
