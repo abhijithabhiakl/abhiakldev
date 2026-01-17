@@ -22,7 +22,10 @@ I personally use this server for local streaming with plex/jellyfin, cloud stora
 
 ## Prerequisites
 
-* Laptop (at least dual-core CPU & 4GB RAM recommended, also works on lower ram size too xD)
+* Laptop (at least dual-core CPU & 4GB RAM recommended, 
+
+       also works on lower ram size too xD, more ram is required to host docker containers)
+
 * USB drive (8GB minimum, its fine as long as debian iso fits in.)
 * Ethernet cable (for initial setup or maybe permanent )
 * [Debian 12 Netinst ISO](https://www.debian.org)
@@ -42,12 +45,14 @@ abhiakl@skittles:~$ neofetch
  $$;      Y$b._   _,d$P'      Terminal: /dev/pts/1
  Y$$.    `.`"Y$$$$P"'         CPU: Intel i5-8250U (8) @ 3.400GHz
  `$$b      "-.__              GPU: Intel UHD Graphics 620
-  `Y$$                        GPU: AMD ATI Radeon R7 M260/M265 / M340/M360 / M440/M445 / 530/535 / 620/625 Mobile
-   `Y$$.                      Memory: 478MiB / 11868MiB
-     `$$b.
-       `Y$$b.
+  `Y$$                        GPU: AMD ATI Radeon R7 M260/M265 / 
+   `Y$$.                      M340/M360 / M440/M445 / 530/535 / 
+     `$$b.                    620/625 Mobile
+        Y$$b.                 Memory: 478MiB / 11868MiB
           `"Y$b._
               `"""
+          
+              
 ```
 
 ***
@@ -96,7 +101,7 @@ abhiakl@skittles:~$
 └── /              (ext4, ~115.5 GB)    # Root partition including /boot and /home inside it
 ```
 
-I didn't create a swap partition at this point since I have a lot ram and I barely have any use for a dedicated swap, anyway I went for the page file later after installing the system with :
+I didn't create a swap partition at this point since I have a lot ram and I barely have any use for a dedicated swap(such as hibernation), anyway I went for the page file later after installing the system with :
 
 ```bash
 ~$ sudo fallocate -l 2G /swapfile
