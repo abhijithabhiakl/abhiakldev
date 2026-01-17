@@ -349,4 +349,4 @@ log in with your normal Linux username/password
 Next Steps:
 
 * Implement Let's Encrypt certificates
-* Explore Kubernetes micro-clusters
+* Setup samba for netowork storage
