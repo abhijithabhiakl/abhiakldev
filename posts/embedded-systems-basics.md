@@ -1,9 +1,7 @@
 ---
-title: Basics of Embedded Systems
+title: 'Delving into Bare metal avr embedded '
 slug: embedded-systems-basics
-description: >-
-  An introduction to embedded systems, perfect for beginners in hardware
-  development.
+description: 'An introduction to bare metal avr embedded , blogging as i learn.'
 tags:
   - technical
   - embedded
